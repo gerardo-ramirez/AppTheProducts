@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,18 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
     <!--Bootstrap cdn en cambio de color con bootswatch-->
 </head>
+
 <body>
     <nav class='navbbar navbar-ligth bg-ligth'>
         <a href="/" class="navbar-brand">
             App Product
         </a>
     </nav>
-    <div class="container">
+    <div class="container"><!--Creamos clases por el paradigma de o.objetos.
+    una clase es para la interfaz y la otra para el producto en si.-->
         <!--APLICATION-->
         <div id='app' class="row pt-5">
-         
+
             <div class='col-md-4'>
                 <!--dentro de cajas-->
                 <div class="card">
@@ -28,30 +31,35 @@
                     </div>
                     <form id='product-form' class="card-body">
                         <!--aqui el formulario-->
-                        <div class="form-group"><!--Esta clase solo se encarga de 
+                        <div class="form-group">
+                            <!--Esta clase solo se encarga de 
                         separar los input es decir colocarlos uno debajo del otro.-->
                             <input type="text" id="name" placeholder="Producto" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="number" id="product-price" placeholder="precio" class="form-control">
+                            <!--Agregar step me permite validar decimales-->
+                            <input type="number" step="0.01" id="product-price" placeholder="precio" class="form-control">
                         </div>
                         <div class="form-group">
                             <input type="number" id="model" placeholder="modelo" class="form-control">
 
                         </div>
+                        <input type="submit" value='Agregar' class="btn btn-primary btn-block">
 
                     </form>
 
                 </div>
 
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8"><!--son las 8 columnas restantes del container que usamos con el form(col-4)-->
+                <div id="product-list"></div><!-- este se encargará de mostrar los productos agregados-->
 
             </div>
 
         </div>
 
     </div>
-    
+<script src='app.js'></script>
 </body>
+
 </html>
